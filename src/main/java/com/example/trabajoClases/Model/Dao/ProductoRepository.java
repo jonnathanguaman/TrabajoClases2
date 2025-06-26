@@ -17,7 +17,7 @@ public interface ProductoRepository extends JpaRepository<Producto, Long> {
     List<Producto> findByPrecioRange(@Param("min") Double min, @Param("max") Double max);
 
     @Query("SELECT p FROM Producto p WHERE p.stock LIKE %:stock%")
-    List<Producto> findByStockContaining(@Param("stock") String stock);
+    List<Producto> findByStockContaining(String stock);
 
     List<Producto> findByIvaTrue();
 
