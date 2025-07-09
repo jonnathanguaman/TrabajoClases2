@@ -1,5 +1,6 @@
 package com.example.trabajoClases.Model.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,5 +23,6 @@ public class TipoPago {
     private String descripcion;
 
     @OneToMany(mappedBy = "tipoPago", cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Factura> facturas;
 }

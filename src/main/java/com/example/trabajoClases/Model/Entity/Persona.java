@@ -1,5 +1,6 @@
 package com.example.trabajoClases.Model.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -29,6 +30,7 @@ public class Persona {
     private String correo;
 
     @OneToMany(mappedBy = "persona", cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Factura> facturas;
 
     public Persona buscarP(String dni) {
